@@ -1,0 +1,38 @@
+GET http://localhost:6969/
+
+###
+
+GET http://localhost:6969/api/characters
+
+
+###
+
+GET http://localhost:6969/api/characters/kn8qwv4i
+
+###
+
+POST http://localhost:6969/api/characters/
+Content-Type: application/json
+
+{
+    "name": "Seven of nine",
+    "rank": "Master cheif petty officer",
+    "img": "placeholder.jpg",
+    "id" : null
+}
+
+###
+
+POST http://localhost:6969/api/characters/
+Content-Type: application/json
+
+{
+    "name": "Spock",
+    "rank": "Captain",
+    "img": "placeholder.jpg",
+    "id" : null
+}
+
+###
+
+DELETE http://localhost:6969/api/characters/kn8qwv4i
