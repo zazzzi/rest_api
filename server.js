@@ -3,14 +3,12 @@ const app = express();
 const uniqId = require("uniqid");
 const port = 6969;
 
-let starTrekChars = [
-  {
-    name: "Jean-Luc Picard",
-    rank: "Captain",
-    img: "placeholder.jpg",
-    id: `${uniqId.time()}`,
-  },
-];
+//fs
+const fs = require("fs");
+const data = fs.readFileSync("data.json");
+const characters = JSON.parse(data);
+
+let starTrekChars = characters;
 
 app.use(express.json());
 app.use(express.static("./public"));
@@ -24,8 +22,11 @@ app.get("/api/characters", (req, res) => {
 app.post("/api/characters", (req, res) => {
   const incomingObject = req.body;
   incomingObject.id = uniqId.time();
-  console.log(incomingObject);
+
   starTrekChars.push(incomingObject);
+  const dataToWrite = JSON.stringify(starTrekChars, null, 2);
+  fs.writeFile("data.json", dataToWrite, () => console.log("Written to DB"));
+
   res.status(201).json(incomingObject);
 });
 

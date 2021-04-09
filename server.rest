@@ -7,7 +7,7 @@ GET http://localhost:6969/api/characters
 
 ###
 
-GET http://localhost:6969/api/characters/kn8qwv4i
+GET http://localhost:6969/api/characters/knaansva
 
 ###
 
@@ -27,7 +27,7 @@ POST http://localhost:6969/api/characters/
 Content-Type: application/json
 
 {
-    "name": "Spock",
+    "name": "Spock 2",
     "rank": "Captain",
     "img": "placeholder.jpg",
     "id" : null
@@ -39,12 +39,12 @@ DELETE http://localhost:6969/api/characters/kn8qwv4i
 
 ### 
 
-PUT http://localhost:6969/api/characters/kna61n6u
+PUT http://localhost:6969/api/characters/knaeetnl
 Content-Type: application/json
 
 {
     "name": "Spock",
-    "rank": "Captain",
+    "rank": "First Officer",
     "img": "placeholder.jpg"
     
 }
