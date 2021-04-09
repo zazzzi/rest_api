@@ -36,3 +36,16 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:6969/api/characters/kn8qwv4i
+
+### 
+
+PUT http://localhost:6969/api/characters/kna61n6u
+Content-Type: application/json
+
+{
+    "name": "Spock",
+    "rank": "Captain",
+    "img": "placeholder.jpg"
+    
+}
+

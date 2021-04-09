@@ -29,6 +29,16 @@ app.post("/api/characters", (req, res) => {
   res.status(201).json(incomingObject);
 });
 
+//update existing character
+app.put("/api/characters/:id", (req, res) => {
+  const indexOfChar = starTrekChars.findIndex((c) => c.id === req.params.id);
+  console.log(indexOfChar);
+
+  starTrekChars[indexOfChar].name = req.body.name;
+  starTrekChars[indexOfChar].rank = req.body.rank;
+  starTrekChars[indexOfChar].img = req.body.img;
+});
+
 //delete character from ID
 app.delete("/api/characters/:id", (req, res) => {
   console.log(req.params.id);
