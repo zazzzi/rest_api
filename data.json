@@ -1,56 +1,50 @@
 [
   {
-    "name": "Jean-Luc Picard",
+    "id": "knaansva",
+    "name": "Jean-Luc Picard ",
     "rank": "Captain",
-    "img": "placeholder.jpg",
-    "id": "knaansva"
+    "img": "https://upload.wikimedia.org/wikipedia/en/8/8e/Patrick_Steward_as_Jean-Luc_Picard_in_1996%27s_Star_Trek_First_Contact.jpg"
   },
   {
-    "name": "Seven of nine",
+    "id": "knabod9h",
+    "name": "Seven of nine ",
     "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knabod9h"
+    "img": "https://images2.fanpop.com/image/photos/10900000/Seven-of-Nine-star-trek-women-10952390-590-740.jpg"
   },
   {
+    "id": "knabof9w",
     "name": "Spock",
     "rank": "Captain",
-    "img": "placeholder.jpg",
-    "id": "knabof9w"
+    "img": "https://www.writeups.org/wp-content/uploads/Spock-Star-Trek-Leonard-Nimoy.jpg"
   },
   {
-    "name": "Spock",
-    "rank": "First Officer",
-    "img": "placeholder.jpg",
-    "id": "knaeetnl"
+    "id": "knaeetnl",
+    "name": "James T. Kirk",
+    "rank": "Captain",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Star_Trek_William_Shatner.JPG/800px-Star_Trek_William_Shatner.JPG"
   },
   {
-    "name": "Seven of nine",
-    "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knaelfzc"
+    "id": "knaelfzc",
+    "name": "Geordi La Forge",
+    "rank": "Lieutenant commander",
+    "img": "https://images2.fanpop.com/image/photos/9400000/Lt-Commander-Geordi-La-Forge-star-trek-the-next-generation-9406844-1659-2560.jpg"
   },
   {
-    "name": "Seven of nine",
-    "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knaeub7x"
+    "id": "knaeub7x",
+    "name": "Worf",
+    "rank": "Lieutenant Commander",
+    "img": "https://upload.wikimedia.org/wikipedia/en/e/ed/WorfTNG.jpg"
   },
   {
-    "name": "Seven of nine",
-    "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knaev3id"
+    "id": "knaev3id",
+    "name": "Deanna Troi",
+    "rank": "Commander",
+    "img": "https://sparklynnrocks.files.wordpress.com/2011/08/counselor-deanna-troi-star-trek-the-next-generation-9406477-1533-22691.jpg"
   },
   {
-    "name": "Seven of nine",
-    "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knaf25wk"
-  },
-  {
-    "name": "Seven of nine",
-    "rank": "Master cheif petty officer",
-    "img": "placeholder.jpg",
-    "id": "knaf26lp"
+    "id": "knerzclf",
+    "name": "Wesley Crusher",
+    "rank": "Lieutenant junior grade",
+    "img": "https://images2.fanpop.com/image/photos/9400000/Wesley-Crusher-star-trek-the-next-generation-9406539-1645-2560.jpg"
   }
 ]
