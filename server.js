@@ -13,6 +13,7 @@ app.get("/api/characters", (req, res) => {
   const characters = JSON.parse(data);
 
   res.status(200).send(characters);
+  console.log('Characters received from DB');
 });
 
 //post new object
@@ -34,14 +35,13 @@ app.put("/api/characters/:id", (req, res) => {
   const data = fs.readFileSync("data.json");
   const characters = JSON.parse(data);
   const indexOfChar = characters.findIndex((c) => c.id === req.params.id);
-  console.log(indexOfChar);
 
   const updatedCharacter = req.body;
   characters[indexOfChar].name = updatedCharacter.name;
   characters[indexOfChar].rank = updatedCharacter.rank;
   characters[indexOfChar].img = updatedCharacter.img;
   fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
-    console.log("Written to DB")
+    console.log("Updated character in DB")
   );
 
   res.status(200);
@@ -54,7 +54,7 @@ app.delete("/api/characters/:id", (req, res) => {
   console.log(req.params.id);
   characters = characters.filter(({ id }) => id !== req.params.id);
   fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
-    console.log("Written to DB")
+    console.log("Deleted character from DB")
   );
   res.status(200);
 });
@@ -65,7 +65,7 @@ app.get("/api/characters/:id", (req, res) => {
   const characters = JSON.parse(data);
   const character = characters.find((c) => c.id === req.params.id);
   !character
-    ? res.status(404).send("Sorry, this person doenst exist")
+    ? res.status(404)
     : res.status(200).send(character);
 });
 

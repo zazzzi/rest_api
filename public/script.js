@@ -2,14 +2,12 @@ window.addEventListener("load", initSite());
 
 //Initial start-up
 function initSite() {
-  console.log("Initial start-up");
   getAllCharacter();
 }
 
 // Get all characters and render them to the DOM
 async function getAllCharacter() {
   const allChars = await fetchRequest("/api/characters/", "GET");
-  console.log("all characters", allChars);
 
   //render all chars
   for (let i = 0; i < allChars.length; i++) {
