@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
 const uniqId = require("uniqid");
-const port = 6969;
-
-//fs
 const fs = require("fs");
+const port = 6969;
 
 app.use(express.json());
 app.use(express.static("./public"));
@@ -14,7 +12,7 @@ app.get("/api/characters", (req, res) => {
   const data = fs.readFileSync("data.json");
   const characters = JSON.parse(data);
 
-  res.send(characters);
+  res.status(200).send(characters);
 });
 
 //post new object
@@ -58,6 +56,7 @@ app.delete("/api/characters/:id", (req, res) => {
   fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
     console.log("Written to DB")
   );
+  res.status(200);
 });
 
 // Get character from ID
@@ -67,7 +66,7 @@ app.get("/api/characters/:id", (req, res) => {
   const character = characters.find((c) => c.id === req.params.id);
   !character
     ? res.status(404).send("Sorry, this person doenst exist")
-    : res.send(character);
+    : res.status(200).send(character);
 });
 
 //server listener
