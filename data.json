@@ -46,5 +46,17 @@
     "name": "Wesley Crusher",
     "rank": "Lieutenant junior grade",
     "img": "https://images2.fanpop.com/image/photos/9400000/Wesley-Crusher-star-trek-the-next-generation-9406539-1645-2560.jpg"
+  },
+  {
+    "id": "knevq5d6",
+    "name": "Q",
+    "rank": "Non Starfleet",
+    "img": "https://images.immediate.co.uk/production/volatile/sites/3/2020/09/GettyImages-102299929-8857f9e.jpg?webp=true&quality=90&resize=620%2C413"
+  },
+  {
+    "id": "knevsh49",
+    "name": "Data",
+    "rank": "Lieutenant commander",
+    "img": "https://s3.amazonaws.com/pq-imgs/images/quizzes/Data-Star-Trek.jpg-5035.jpg"
   }
 ]
