@@ -182,9 +182,7 @@ img {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  position: fixed;
-  top: 17rem;
-  right: 43rem;
+
 }
 
 .close:hover,
