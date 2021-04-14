@@ -7,6 +7,8 @@ const port = 6969;
 app.use(express.json());
 app.use(express.static("./public"));
 
+
+
 //get all characters
 app.get("/api/characters", (req, res) => {
   const data = fs.readFileSync("data.json");
@@ -28,9 +30,7 @@ app.post("/api/characters", (req, res) => {
   if (filteredCharacters) {
     res.status(409).json("Character already exists");
   } else {
-    if (incomingObject.name.slice(-1) === " ") {
-      incomingObject.name = incomingObject.name.slice(0, -1);
-    }
+    incomingObject.name = incomingObject.name.trim();
     incomingObject.id = uniqId.time();
     characters.push(incomingObject);
     const dataToWrite = JSON.stringify(characters, null, 2);
@@ -61,7 +61,7 @@ app.put("/api/characters/:id", (req, res) => {
 app.delete("/api/characters/:id", (req, res) => {
   const data = fs.readFileSync("data.json");
   let characters = JSON.parse(data);
-  console.log(req.params.id);
+
   characters = characters.filter(({ id }) => id !== req.params.id);
   fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
     console.log("Deleted character from DB")
