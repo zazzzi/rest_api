@@ -9,7 +9,6 @@ function initSite() {
 // Gets all characters and renders them to the DOM
 async function getAllCharacter() {
   const allChars = await fetchRequest("/api/characters/", "GET");
-  console.log(allChars);
   //render all chars
   for (let i = 0; i < allChars.length; i++) {
     renderCharacters(allChars[i]);
