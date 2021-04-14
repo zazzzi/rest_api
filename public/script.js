@@ -3,12 +3,13 @@ window.addEventListener("load", initSite());
 //Initial start-up
 function initSite() {
   getAllCharacter();
+  getSearchTools();
 }
 
-// Get all characters and render them to the DOM
+// Gets all characters and renders them to the DOM
 async function getAllCharacter() {
   const allChars = await fetchRequest("/api/characters/", "GET");
-
+  console.log(allChars);
   //render all chars
   for (let i = 0; i < allChars.length; i++) {
     renderCharacters(allChars[i]);
@@ -133,9 +134,34 @@ function setEditModalContent(character) {
   modalForm.append(imgLable);
   modalForm.append(img);
   modalWrapper.append(modalForm);
-  modalWrapper.append(btnDiv)
+  modalWrapper.append(btnDiv);
   btnDiv.append(saveBtn);
   btnDiv.append(deleteBtn);
+}
+
+//search function
+function getSearchTools() {
+  const searchField = document.getElementById("searchField");
+  let value = null;
+  searchField.addEventListener("change", () => {
+    value = searchField.value;
+    value.replace(/ /, "&")
+  });
+  const searchBtn = document.getElementById("searchBtn");
+  searchBtn.addEventListener("click", () => {
+    console.log(value);
+    searchCharacter(value);
+  });
+}
+async function searchCharacter(value) {
+  const filteredCharacter = await fetchRequest(
+    `/api/filtered-characters/${value}`,
+    "GET"
+  );
+  if (filteredCharacter) {
+    setEditModalContent(filteredCharacter);
+    handleModal();
+  }
 }
 
 /**

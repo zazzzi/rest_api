@@ -7,7 +7,8 @@ GET http://localhost:6969/api/characters
 
 ###
 
-GET http://localhost:6969/api/characters/knabof9w
+GET http://localhost:6969/api/filtered-characters/Spock
+
 
 ###
 
@@ -16,7 +17,7 @@ Content-Type: application/json
 
 {
     "id" : null,
-    "name": "teawdaadadasdwdadwast",
+    "name": "Spock",
     "rank": "Master cheif petty officer",
     "img": "placeholder.jpg"
 }

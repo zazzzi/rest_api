@@ -13,21 +13,31 @@ app.get("/api/characters", (req, res) => {
   const characters = JSON.parse(data);
 
   res.status(200).send(characters);
-  console.log('Characters received from DB');
+  console.log("Characters received from DB");
 });
 
 //post new object
 app.post("/api/characters", (req, res) => {
-  const incomingObject = req.body;
-  incomingObject.id = uniqId.time();
+  let incomingObject = req.body;
   const data = fs.readFileSync("data.json");
   const characters = JSON.parse(data);
 
-  characters.push(incomingObject);
-  const dataToWrite = JSON.stringify(characters, null, 2);
-  fs.writeFile("data.json", dataToWrite, () => console.log("Written to DB"));
+  const filteredCharacters = characters.find(
+    (c) => c.name.toLowerCase() === incomingObject.name.toLowerCase()
+  );
+  if (filteredCharacters) {
+    res.status(409).json("Character already exists");
+  } else {
+    if (incomingObject.name.slice(-1) === " ") {
+      incomingObject.name = incomingObject.name.slice(0, -1);
+    }
+    incomingObject.id = uniqId.time();
+    characters.push(incomingObject);
+    const dataToWrite = JSON.stringify(characters, null, 2);
+    fs.writeFile("data.json", dataToWrite, () => console.log("Written to DB"));
 
-  res.status(201).json(incomingObject);
+    res.status(201).json(incomingObject);
+  }
 });
 
 //update existing character
@@ -59,14 +69,20 @@ app.delete("/api/characters/:id", (req, res) => {
   res.status(200);
 });
 
-// Get character from ID
-app.get("/api/characters/:id", (req, res) => {
+// get specific character
+app.get("/api/filtered-characters/:value", (req, res) => {
   const data = fs.readFileSync("data.json");
   const characters = JSON.parse(data);
-  const character = characters.find((c) => c.id === req.params.id);
-  !character
-    ? res.status(404)
-    : res.status(200).send(character);
+  const incomingSearch = req.params.value;
+  incomingSearch.replace(/&/, " ");
+
+  const filteredCharacters = characters.find(
+    (c) => c.name.toLowerCase() === incomingSearch.toLowerCase()
+  );
+  !filteredCharacters
+    ? res.send("This character doesn't exist")
+    : (res.status(200).send(filteredCharacters),
+      console.log("Search completed"));
 });
 
 //server listener

@@ -1,13 +1,13 @@
 [
   {
     "id": "knaansva",
-    "name": "Jean-Luc Picard ",
+    "name": "Jean-Luc Picard",
     "rank": "Captain",
     "img": "https://upload.wikimedia.org/wikipedia/en/8/8e/Patrick_Steward_as_Jean-Luc_Picard_in_1996%27s_Star_Trek_First_Contact.jpg"
   },
   {
     "id": "knabod9h",
-    "name": "Seven of nine ",
+    "name": "Seven of nine",
     "rank": "Master cheif petty officer",
     "img": "https://images2.fanpop.com/image/photos/10900000/Seven-of-Nine-star-trek-women-10952390-590-740.jpg"
   },
@@ -46,12 +46,6 @@
     "name": "Wesley Crusher",
     "rank": "Lieutenant junior grade",
     "img": "https://images2.fanpop.com/image/photos/9400000/Wesley-Crusher-star-trek-the-next-generation-9406539-1645-2560.jpg"
-  },
-  {
-    "id": "knevq5d6",
-    "name": "Q",
-    "rank": "Non Starfleet",
-    "img": "https://static.wikia.nocookie.net/memoryalpha/images/3/3f/Q_in_2364.jpg/revision/latest/scale-to-width-down/900?cb=20161120234447&path-prefix=en"
   },
   {
     "id": "knevsh49",
