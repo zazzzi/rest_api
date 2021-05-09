@@ -17,23 +17,21 @@ Content-Type: application/json
 
 {
     "id" : null,
-    "name": "Spock",
+    "name": "qwe",
     "rank": "Master cheif petty officer",
     "img": "placeholder.jpg"
 }
 
 ###
 
-DELETE http://localhost:6969/api/characters/knesgqrl
-### 
+DELETE http://localhost:6969/api/characters/kohcmkjm
 
-PUT http://localhost:6969/api/characters/knesgqrl
+PUT http://localhost:6969/api/characters/knhiksdy4b
 Content-Type: application/json
 
 {
     "name": "losdsdl",
     "rank": "First Officer",
-    "img": "placeholder.jpg"
-    
+    "img": "placeholder.jpg"   
 }
 

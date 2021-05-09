@@ -7,8 +7,6 @@ const port = 6969;
 app.use(express.json());
 app.use(express.static("./public"));
 
-
-
 //get all characters
 app.get("/api/characters", (req, res) => {
   const data = fs.readFileSync("data.json");
@@ -45,16 +43,21 @@ app.put("/api/characters/:id", (req, res) => {
   const data = fs.readFileSync("data.json");
   const characters = JSON.parse(data);
   const indexOfChar = characters.findIndex((c) => c.id === req.params.id);
-
+  console.log(indexOfChar);
   const updatedCharacter = req.body;
-  characters[indexOfChar].name = updatedCharacter.name;
-  characters[indexOfChar].rank = updatedCharacter.rank;
-  characters[indexOfChar].img = updatedCharacter.img;
-  fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
-    console.log("Updated character in DB")
-  );
 
-  res.status(200);
+  if (indexOfChar !== -1) {
+    characters[indexOfChar].name = updatedCharacter.name;
+    characters[indexOfChar].rank = updatedCharacter.rank;
+    characters[indexOfChar].img = updatedCharacter.img;
+    fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
+      console.log("Updated character in DB")
+    );
+
+    res.status(200).json("Character updated.");
+  } else {
+    res.status(404).json("A character with that ID doesn't exist.")
+  }
 });
 
 //delete character from ID
@@ -63,10 +66,11 @@ app.delete("/api/characters/:id", (req, res) => {
   let characters = JSON.parse(data);
 
   characters = characters.filter(({ id }) => id !== req.params.id);
+  console.log(characters);
   fs.writeFile("data.json", JSON.stringify(characters, null, 2), () =>
     console.log("Deleted character from DB")
   );
-  res.status(200);
+  res.status(200).json("Character deleted from DB.");
 });
 
 // get specific character
